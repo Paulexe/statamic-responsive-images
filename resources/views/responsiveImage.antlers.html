@@ -1,6 +1,6 @@
 <picture>
-    {{ if srcSetWebp }}<source type="image/webp" srcset="{{ srcSetWebp }}" />{{ /if }}
-    <source srcset="{{ srcSet }}" />
+    {{ if srcSetWebp }}<source type="image/webp" srcset="{{ srcSetWebp }}" {{ if sizes }} sizes="{{ sizes }}"{{ /if }}/>{{ /if }}
+    <source srcset="{{ srcSet }}" {{ if sizes }} sizes="{{ sizes }}"{{ /if }}/>
     <img
         {{ attributeString }}
         src="{{ src }}"

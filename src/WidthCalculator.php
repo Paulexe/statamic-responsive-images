@@ -28,6 +28,7 @@ class WidthCalculator
         $predictedFileSize = $fileSize;
         $pixelPrice = $predictedFileSize / $area;
 
+
         while (true) {
             $predictedFileSize *= 0.7;
 

@@ -38,6 +38,7 @@ class Responsive extends Tags
         $includePlaceholder = $this->params['placeholder'] ?? true;
         $includeWebp = $this->params['webp'] ?? true;
         $this->ratio = $this->params['ratio'] ?? null;
+        $this->sizes = $this->params['sizes'] ?? null;
 
         if (Str::contains($this->ratio, '/')) {
             [$width, $height] = explode('/', $this->ratio);
@@ -75,6 +76,7 @@ class Responsive extends Tags
         }
 
         return view('responsive-images::responsiveImage', [
+            'sizes' => $this->sizes,
             'attributeString' => $this->getAttributeString(),
             'src' => $asset->url(),
             'srcSet' => $this->buildSrcSet($widths, $asset),
